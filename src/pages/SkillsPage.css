@@ -1,0 +1,401 @@
+/* SkillsPage.css — IntelliJ IDEA style matching exact screenshot & design specifications */
+
+.ide-skills-root {
+  min-height: 100vh;
+  background-color: #0F151D;
+  color: #F3F0E8;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* TOP HEADER */
+.ide-header {
+  height: 68px;
+  background-color: #0D141C;
+  border-bottom: 1px solid #202A35;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.ide-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.ide-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.ide-header-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 7px;
+}
+
+.ide-header-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.ide-title {
+  font-size: 25px;
+  font-weight: 600;
+  color: #F3F0E8;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.ide-subtitle {
+  font-size: 16px;
+  color: #718096;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.ide-header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* PORTFOLIO BACK BUTTON IN HEADER */
+.projects-portfolio-btn {
+  background-color: rgba(217, 119, 87, 0.15);
+  border: 1px solid rgba(217, 119, 87, 0.45);
+  color: #D97757;
+  padding: 0.55rem 1.15rem;
+  border-radius: 22px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-left: 0.5rem;
+  outline: none;
+}
+
+.projects-portfolio-btn:hover,
+.projects-portfolio-btn:active {
+  background-color: #D97757;
+  color: #FFFFFF;
+  border-color: #D97757;
+  box-shadow: 0 4px 16px rgba(217, 119, 87, 0.45);
+  transform: translateY(-1px);
+}
+
+.ide-back-btn {
+  background-color: #FF9A6F;
+  color: #151412;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0.5rem 1.15rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 14px rgba(255, 154, 111, 0.4);
+}
+
+.ide-back-btn:hover {
+  background-color: #ffaa83;
+  transform: translateY(-1px);
+  box-shadow: 0 0 18px rgba(255, 154, 111, 0.6);
+}
+
+/* MAIN EDITOR & EXPLORER BODY */
+.ide-main-layout {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  height: calc(100vh - 68px - 28px);
+}
+
+/* LEFT PROJECT EXPLORER */
+.ide-explorer {
+  width: 290px;
+  background-color: #0B121A;
+  border-right: 1px solid #202A35;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.explorer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid #202A35;
+  color: #D7E0EA;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.explorer-chevron {
+  color: #718096;
+}
+
+.explorer-tree {
+  padding: 0.5rem 0.25rem;
+  overflow-y: auto;
+  font-size: 14.5px;
+}
+
+.tree-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.5rem;
+  color: #D7E0EA;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  border-radius: 4px;
+}
+
+.tree-row:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.tree-row.selected {
+  background-color: #212830;
+  color: #F3F0E8;
+  border-radius: 6px;
+}
+
+.tree-chevron {
+  color: #718096;
+  flex-shrink: 0;
+}
+
+.folder-icon {
+  color: #D7E0EA;
+  flex-shrink: 0;
+}
+
+.file-icon {
+  color: #718096;
+  flex-shrink: 0;
+}
+
+.yaml-leaf-img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  margin-right: 0.25rem;
+  flex-shrink: 0;
+}
+
+.yaml-tab-leaf-img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  margin-right: 0.35rem;
+  flex-shrink: 0;
+}
+
+.node-text {
+  font-size: 14.5px;
+  white-space: nowrap;
+}
+
+.selected-file-text {
+  font-weight: 500;
+  color: #F3F0E8;
+}
+
+.tree-children {
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+/* Vertical Indentation Guide Lines */
+.tree-children::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.75rem;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+/* CENTER CODE EDITOR */
+.ide-editor-container {
+  flex: 1;
+  background-color: #0F151D;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.editor-tab-bar {
+  height: 38px;
+  background-color: #0B121A;
+  border-bottom: 1px solid #202A35;
+  display: flex;
+  align-items: center;
+}
+
+.editor-tab {
+  height: 100%;
+  padding: 0 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 16px;
+  color: #718096;
+  cursor: pointer;
+  user-select: none;
+}
+
+.editor-tab.active {
+  background-color: #0F151D;
+  color: #F3F0E8;
+  border-top: 2px solid #FF6F4E;
+  font-weight: 500;
+}
+
+.tab-icon {
+  font-size: 14px;
+}
+
+.tab-close {
+  color: #718096;
+  font-size: 16px;
+  margin-left: 0.4rem;
+}
+
+.tab-close:hover {
+  color: #F3F0E8;
+}
+
+/* EDITOR VIEWPORT */
+.editor-viewport {
+  flex: 1;
+  display: flex;
+  overflow: auto;
+  background-color: #0F151D;
+}
+
+.editor-line-numbers {
+  width: 55px;
+  background-color: #121B25;
+  border-right: 1px solid #202A35;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.editor-line-num {
+  font-family: Consolas, 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 17px;
+  line-height: 1.55;
+  color: #718096;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+.editor-code-content {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  font-family: Consolas, 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 17px;
+  line-height: 1.55;
+  color: #F3F0E8;
+}
+
+.code-line {
+  white-space: pre;
+  min-height: 1.55em;
+}
+
+/* Syntax Highlighting Colors matching exact IntelliJ reference */
+.comment-line {
+  color: #55D66F; /* IntelliJ Comment Green */
+  font-style: italic;
+}
+
+.yaml-key {
+  color: #FF815F; /* IntelliJ YAML Key Orange */
+  font-weight: 600;
+}
+
+.yaml-bullet {
+  color: #718096;
+  margin-right: 0.4rem;
+}
+
+.yaml-value {
+  color: #A9D1FF; /* IntelliJ Value Blue */
+}
+
+/* BOTTOM STATUS BAR */
+.ide-status-bar {
+  height: 28px;
+  background-color: #0B1118;
+  border-top: 1px solid #202A35;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  font-size: 13px;
+  color: #A9B4C2;
+  user-select: none;
+}
+
+.status-left,
+.status-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.status-sep {
+  color: #718096;
+  font-size: 11px;
+}
+
+@media (max-width: 900px) {
+  .ide-explorer {
+    display: none;
+  }
+
+  .ide-title {
+    font-size: 20px;
+  }
+
+  .ide-subtitle {
+    font-size: 14px;
+  }
+
+  .editor-line-numbers {
+    width: 42px;
+  }
+
+  .editor-code-content {
+    font-size: 15px;
+    padding: 0.75rem;
+  }
+}

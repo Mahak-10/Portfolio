@@ -1,0 +1,89 @@
+.section-view-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.section-content-card {
+  background-color: var(--bg-card-inner);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 2rem;
+  color: var(--text-primary);
+}
+
+.section-page-title {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.section-page-subtitle {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Common Section List Styles */
+.section-item-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.section-item-card:hover {
+  border-color: var(--accent-orange-border);
+  transform: translateY(-1px);
+}
+
+.section-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-item-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.section-item-meta {
+  color: var(--accent-orange);
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.section-item-sub {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-item-desc {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.tech-tag {
+  display: inline-block;
+  background-color: var(--accent-orange-bg);
+  border: 1px solid var(--accent-orange-border);
+  color: var(--text-primary);
+  padding: 0.2rem 0.65rem;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  margin-right: 0.4rem;
+  margin-top: 0.4rem;
+}

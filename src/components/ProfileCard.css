@@ -1,0 +1,252 @@
+.profile-card-inner {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 14px;
+  padding: 1.6rem 2rem;
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 2.1rem;
+  align-items: flex-start;
+}
+
+/* Left Column: Photo & Contact */
+.profile-card-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.profile-avatar-wrapper {
+  position: relative;
+  width: 220px;
+  height: 235px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  align-self: center;
+}
+
+.profile-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.profile-avatar-fallback {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2a2520 0%, #1e1b18 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-orange);
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.profile-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  width: 100%;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-top: 1.25rem;
+}
+
+.profile-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  word-break: break-word;
+}
+
+.profile-contact-icon {
+  color: var(--accent-orange);
+  flex-shrink: 0;
+}
+
+/* Right Column: Name, Bio, Skills & Social Links */
+.profile-card-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.profile-role-label {
+  color: var(--accent-orange);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.profile-name-title {
+  font-family: var(--font-serif);
+  font-size: 2.35rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.profile-education-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.profile-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.profile-badge-divider {
+  color: #4a443c;
+}
+
+.profile-summary-text {
+  color: #bab5aa;
+  font-size: 0.94rem;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+/* Skill Pills Section */
+.profile-skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+  margin-top: 0.3rem;
+}
+
+.skill-pill {
+  padding: 0.38rem 1.05rem;
+  border-radius: 20px;
+  font-size: 0.86rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: default;
+  border: 1px solid var(--border-subtle);
+  background-color: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
+}
+
+.skill-pill:hover {
+  border-color: var(--accent-orange-border);
+  background-color: var(--accent-orange-bg);
+  transform: translateY(-1px);
+}
+
+/* Individual subtle pill accents matching Claude palette */
+.skill-pill-java {
+  border-color: rgba(217, 119, 87, 0.4);
+  background-color: rgba(217, 119, 87, 0.08);
+}
+
+.skill-pill-dsa {
+  border-color: rgba(160, 120, 200, 0.3);
+  background-color: rgba(160, 120, 200, 0.06);
+}
+
+.skill-pill-oops {
+  border-color: rgba(90, 140, 180, 0.3);
+  background-color: rgba(90, 140, 180, 0.06);
+}
+
+.skill-pill-springboot {
+  border-color: rgba(90, 170, 120, 0.35);
+  background-color: rgba(90, 170, 120, 0.08);
+}
+
+.skill-pill-mysql {
+  border-color: rgba(210, 150, 80, 0.35);
+  background-color: rgba(210, 150, 80, 0.08);
+}
+
+/* Social Icons row aligned directly under OOPS and MySQL skill pills */
+.profile-social-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  padding-left: 7.5rem;
+}
+
+.profile-social-link {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background-color: transparent;
+}
+
+/* GitHub Cutout Style (Circular) */
+.profile-social-link.social-github {
+  border-radius: 50%;
+}
+
+.profile-social-link.social-github .social-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+/* LinkedIn Cutout Style (Square) */
+.profile-social-link.social-linkedin {
+  border-radius: 6px;
+}
+
+.profile-social-link.social-linkedin .social-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.profile-social-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-color: var(--accent-orange-border);
+}
+
+@media (max-width: 850px) {
+  .profile-card-inner {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+
+  .profile-card-left {
+    align-items: flex-start;
+  }
+
+  .profile-name-title {
+    font-size: 1.95rem;
+  }
+
+  .profile-social-row {
+    padding-left: 0;
+  }
+}

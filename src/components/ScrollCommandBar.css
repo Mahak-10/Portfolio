@@ -1,0 +1,67 @@
+.scroll-command-bar {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 0.65rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.scroll-command-bar:hover {
+  border-color: #3b3630;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.scroll-command-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex: 1;
+}
+
+.command-plus-icon {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1;
+  user-select: none;
+}
+
+.command-divider {
+  width: 1px;
+  height: 16px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.command-text {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 400;
+  user-select: none;
+}
+
+.scroll-down-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--accent-orange);
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.scroll-down-btn:hover {
+  background-color: var(--accent-orange-hover);
+  transform: translateY(2px);
+}
