@@ -5,7 +5,7 @@ export const portfolioData = {
     tagline: "Computer Science undergraduate focusing on backend development",
     education: "B.Tech CSE '27",
     experienceStatus: "Fresher",
-    location: "Ghaziabad, India",
+    location: "Gurgaon, India",
     phone: "+91-8521335770",
     email: "mahaksinghjsr@gmail.com",
     // Avatar image URL / path - user provided photo
