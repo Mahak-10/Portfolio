@@ -79,7 +79,7 @@ export const ContactPage = () => {
                 <div className="contact-row-item">
                   <span className="check-mark">[✓]</span>
                   <div className="row-icon-box">
-                    <img src="/gmail.png" alt="Email" className="contact-row-img" />
+                    <img src="/images/gmail.png" alt="Email" className="contact-row-img" />
                   </div>
                   <span className="row-label">Email</span>
                   <span className="row-colon">:</span>
@@ -92,7 +92,7 @@ export const ContactPage = () => {
                 <div className="contact-row-item">
                   <span className="check-mark">[✓]</span>
                   <div className="row-icon-box">
-                    <img src="/phone.png" alt="Phone" className="contact-row-img" />
+                    <img src="/images/phone.png" alt="Phone" className="contact-row-img" />
                   </div>
                   <span className="row-label">Phone</span>
                   <span className="row-colon">:</span>
@@ -105,7 +105,7 @@ export const ContactPage = () => {
                 <div className="contact-row-item">
                   <span className="check-mark">[✓]</span>
                   <div className="row-icon-box">
-                    <img src="/linkedin.png" alt="LinkedIn" className="contact-row-img" />
+                    <img src="/images/linkedin.png" alt="LinkedIn" className="contact-row-img" />
                   </div>
                   <span className="row-label">LinkedIn</span>
                   <span className="row-colon">:</span>
@@ -118,7 +118,7 @@ export const ContactPage = () => {
                 <div className="contact-row-item">
                   <span className="check-mark">[✓]</span>
                   <div className="row-icon-box">
-                    <img src="/github.png" alt="GitHub" className="contact-row-img" />
+                    <img src="/images/github.png" alt="GitHub" className="contact-row-img" />
                   </div>
                   <span className="row-label">GitHub</span>
                   <span className="row-colon">:</span>
@@ -131,7 +131,7 @@ export const ContactPage = () => {
                 <div className="contact-row-item">
                   <span className="check-mark">[✓]</span>
                   <div className="row-icon-box">
-                    <img src="/calendly.png" alt="Calendly" className="contact-row-img" />
+                    <img src="/images/calendly.png" alt="Calendly" className="contact-row-img" />
                   </div>
                   <span className="row-label">Calendly</span>
                   <span className="row-colon">:</span>

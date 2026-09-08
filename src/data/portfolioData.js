@@ -9,9 +9,11 @@ export const portfolioData = {
     phone: "+91-8521335770",
     email: "mahaksinghjsr@gmail.com",
     // Avatar image URL / path - user provided photo
-    profileImage: "/mahak-photo.jpeg",
+    profileImage: "/images/mahak-photo.jpeg",
     sidebarFooterText: "Building a better tomorrow with technology.",
-    summary: `Computer Science undergraduate with hands-on experience in Java, Spring Boot, and REST API development through academic and internship projects, and exposure to MySQL. Comfortable working with Data Structures and Algorithms. Looking to start my career as a Software Development Engineer with a focus on backend development.`
+    summary: `Hi, I'm Mahak — a final-year Computer Science undergraduate who likes building backend systems that solve real problems. I completed a Software Developer Internship at Senraa, working on the backend and computer vision side of an AR-based virtual try-on product. I've built a 6-service microservices architecture in Java and Spring Boot for a health recommendation system, and an e-commerce backend with 44 REST API endpoints and role-based access control.
+
+I'm currently looking for full-time Software Developer roles — feel free to reach out.`
   },
 
   aboutHighlightedSkills: [

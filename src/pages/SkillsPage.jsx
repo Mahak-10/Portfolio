@@ -75,7 +75,7 @@ export const SkillsPage = () => {
       <header className="ide-header">
         <div className="ide-header-left" style={{ flexDirection: 'row', alignItems: 'center', gap: '1.2rem' }}>
           <div className="ide-logo-wrapper">
-            <img src="/intellij.jpg" alt="IntelliJ IDEA" className="ide-header-logo-img" />
+            <img src="/images/intellij.jpg" alt="IntelliJ IDEA" className="ide-header-logo-img" />
           </div>
           <div className="ide-header-titles">
             <h1 className="ide-title font-sans">Mahak Singh</h1>
@@ -198,7 +198,7 @@ export const SkillsPage = () => {
                               {/* SELECTED FILE: application.yml */}
                               <div className="tree-row file-row selected">
                                 <img
-                                  src="/application-yml-leaf-crop.png"
+                                  src="/images/application-yml-leaf-crop.png"
                                   alt="YAML"
                                   className="yaml-leaf-img"
                                 />
@@ -235,7 +235,7 @@ export const SkillsPage = () => {
           <div className="editor-tab-bar">
             <div className="editor-tab active">
               <img
-                src="/application-yml-leaf-crop.png"
+                src="/images/application-yml-leaf-crop.png"
                 alt="YAML"
                 className="yaml-tab-leaf-img"
               />

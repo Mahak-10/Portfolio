@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2520" />
+      <stop offset="100%" stop-color="#181614" />
+    </linearGradient>
+  </defs>
+  <circle cx="200" cy="200" r="200" fill="url(#bgGrad)" />
+  <!-- Hair background -->
+  <path d="M 100 240 Q 90 120 200 90 Q 310 120 300 240 Q 310 320 290 380 L 110 380 Q 90 320 100 240 Z" fill="#141210" />
+  <!-- Face outline -->
+  <ellipse cx="200" cy="220" rx="70" ry="85" fill="#d4a373" />
+  <!-- Hair top -->
+  <path d="M 120 200 Q 140 120 200 120 Q 260 120 280 200 Q 230 150 200 160 Q 170 150 120 200 Z" fill="#1b1815" />
+  <!-- Eyes -->
+  <ellipse cx="175" cy="215" rx="8" ry="6" fill="#1b1815" />
+  <ellipse cx="225" cy="215" rx="8" ry="6" fill="#1b1815" />
+  <!-- Eyebrows -->
+  <path d="M 160 200 Q 175 195 190 202" stroke="#1b1815" stroke-width="3" fill="none" stroke-linecap="round" />
+  <path d="M 210 202 Q 225 195 240 200" stroke="#1b1815" stroke-width="3" fill="none" stroke-linecap="round" />
+  <!-- Smile -->
+  <path d="M 180 260 Q 200 275 220 260" stroke="#1b1815" stroke-width="3.5" fill="none" stroke-linecap="round" />
+  <!-- Shoulders / Black Top -->
+  <path d="M 100 370 Q 200 330 300 370 L 320 400 L 80 400 Z" fill="#11100f" />
+</svg>

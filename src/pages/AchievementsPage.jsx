@@ -130,7 +130,7 @@ export const AchievementsPage = () => {
             <div className="card-achievement">
               <div className="card-top-head">
                 <div className="brand-logo-box">
-                  <img src="/ibm.jpg" alt="IBM" className="brand-logo-img" />
+                  <img src="/images/ibm.jpg" alt="IBM" className="brand-logo-img" />
                 </div>
                 <span className="card-year-badge">2025</span>
               </div>
@@ -212,7 +212,7 @@ export const AchievementsPage = () => {
             <div className="card-cert">
               <div className="cert-left-content">
                 <div className="cert-logo-box">
-                  <img src="/aws.jpg" alt="AWS" className="cert-logo-img" />
+                  <img src="/images/aws.jpg" alt="AWS" className="cert-logo-img" />
                 </div>
 
                 <div className="cert-info">
@@ -245,7 +245,7 @@ export const AchievementsPage = () => {
             <div className="card-cert">
               <div className="cert-left-content">
                 <div className="cert-logo-box">
-                  <img src="/springboot.png" alt="Spring Boot" className="cert-logo-img" />
+                  <img src="/images/springboot.png" alt="Spring Boot" className="cert-logo-img" />
                 </div>
 
                 <div className="cert-info">

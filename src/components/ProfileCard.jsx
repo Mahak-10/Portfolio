@@ -96,7 +96,7 @@ export const ProfileCard = () => {
             title="GitHub Profile"
             aria-label="GitHub Profile"
           >
-            <img src="/github.png" alt="GitHub" className="social-icon-img" />
+            <img src="/images/github.png" alt="GitHub" className="social-icon-img" />
           </a>
           <a
             href={contact?.linkedin || "#"}
@@ -106,7 +106,7 @@ export const ProfileCard = () => {
             title="LinkedIn Profile"
             aria-label="LinkedIn Profile"
           >
-            <img src="/linkedin.png" alt="LinkedIn" className="social-icon-img" />
+            <img src="/images/linkedin.png" alt="LinkedIn" className="social-icon-img" />
           </a>
         </div>
       </div>

@@ -69,7 +69,7 @@ export const CodingProfilesPage = () => {
       {/* TOP HEADER */}
       <header className="leetcode-header">
         <div className="header-left" style={{ flexDirection: 'row', alignItems: 'center', gap: '1rem' }}>
-          <img src="/leetcode.png" alt="LeetCode" className="leetcode-header-logo-img" />
+          <img src="/images/leetcode.png" alt="LeetCode" className="leetcode-header-logo-img" />
           <span className="header-brand">LeetCode</span>
           <div className="header-sep"></div>
           <span className="header-title">Coding Profiles</span>
@@ -199,7 +199,7 @@ export const CodingProfilesPage = () => {
                     <CheckCircle2 size={18} className="check-icon-green" />
                     <span className="tc-label">Testcase 1</span>
                     <div className="platform-logo-box">
-                      <img src="/leetcode.png" alt="LeetCode" className="platform-logo-img" />
+                      <img src="/images/leetcode.png" alt="LeetCode" className="platform-logo-img" />
                     </div>
                     <div className="platform-meta">
                       <span className="platform-name">LeetCode</span>
@@ -224,7 +224,7 @@ export const CodingProfilesPage = () => {
                     <CheckCircle2 size={18} className="check-icon-green" />
                     <span className="tc-label">Testcase 2</span>
                     <div className="platform-logo-box">
-                      <img src="/codechef.png" alt="CodeChef" className="platform-logo-img" />
+                      <img src="/images/codechef.png" alt="CodeChef" className="platform-logo-img" />
                     </div>
                     <div className="platform-meta">
                       <span className="platform-name">CodeChef</span>
@@ -249,7 +249,7 @@ export const CodingProfilesPage = () => {
                     <CheckCircle2 size={18} className="check-icon-green" />
                     <span className="tc-label">Testcase 3</span>
                     <div className="platform-logo-box">
-                      <img src="/gfg.png" alt="GeeksforGeeks" className="platform-logo-img" />
+                      <img src="/images/gfg.png" alt="GeeksforGeeks" className="platform-logo-img" />
                     </div>
                     <div className="platform-meta">
                       <span className="platform-name">GeeksforGeeks</span>
@@ -274,7 +274,7 @@ export const CodingProfilesPage = () => {
                     <CheckCircle2 size={18} className="check-icon-green" />
                     <span className="tc-label">Testcase 4</span>
                     <div className="platform-logo-box">
-                      <img src="/hackerank.png" alt="HackerRank" className="platform-logo-img" />
+                      <img src="/images/hackerank.png" alt="HackerRank" className="platform-logo-img" />
                     </div>
                     <div className="platform-meta">
                       <span className="platform-name">HackerRank</span>
