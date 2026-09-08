@@ -817,8 +817,8 @@ export const portfolioData = {
     },
     {
       platform: "GitHub",
-      username: "mahaksingh",
-      link: "https://github.com",
+      username: "Mahak-10",
+      link: "https://github.com/Mahak-10",
       highlights: "Open repositories for Spring Boot applications and Java DSA implementations"
     }
   ],
@@ -838,8 +838,8 @@ export const portfolioData = {
     email: "mahaksinghjsr@gmail.com",
     phone: "+91-8521335770",
     location: "Ghaziabad, India",
-    linkedin: "https://linkedin.com/in/mahaksingh",
-    github: "https://github.com/mahaksingh",
+    linkedin: "https://www.linkedin.com/in/mahak1210",
+    github: "https://github.com/Mahak-10",
     calendly: "https://calendly.com/mahaksinghjsr/30min"
   }
 };

@@ -29,8 +29,12 @@ export const ExploreMoreSection = ({ sectionRef }) => {
   const navigate = useNavigate();
 
   const handleCardClick = (path) => {
-    navigate(path);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (path === '/resume') {
+      window.open('/resume_mahak.pdf', '_blank');
+    } else {
+      navigate(path);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (

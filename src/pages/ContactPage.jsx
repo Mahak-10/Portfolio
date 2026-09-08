@@ -110,7 +110,7 @@ export const ContactPage = () => {
                   <span className="row-label">LinkedIn</span>
                   <span className="row-colon">:</span>
                   <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="row-link">
-                    linkedin.com/in/mahaksingh <ExternalLink size={13} style={{ marginLeft: 2 }} />
+                    linkedin.com/in/mahak1210 <ExternalLink size={13} style={{ marginLeft: 2 }} />
                   </a>
                 </div>
 
@@ -123,7 +123,7 @@ export const ContactPage = () => {
                   <span className="row-label">GitHub</span>
                   <span className="row-colon">:</span>
                   <a href={contact.github} target="_blank" rel="noopener noreferrer" className="row-link">
-                    github.com/mahaksingh <ExternalLink size={13} style={{ marginLeft: 2 }} />
+                    github.com/Mahak-10 <ExternalLink size={13} style={{ marginLeft: 2 }} />
                   </a>
                 </div>
 

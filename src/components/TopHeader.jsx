@@ -11,7 +11,7 @@ export const TopHeader = () => {
       <div className="top-header-right">
         <button
           className="header-resume-btn"
-          onClick={() => navigate('/resume')}
+          onClick={() => window.open('/resume_mahak.pdf', '_blank')}
           title="View Resume"
           aria-label="View Resume"
         >
