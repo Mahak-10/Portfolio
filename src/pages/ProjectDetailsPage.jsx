@@ -721,7 +721,27 @@ export const ProjectDetailsPage = () => {
       {/* 2. CINEMATIC VIDEO HERO SECTION (~520px) */}
       <section className="details-hero-section">
         <div className="hero-video-container">
-          {project.videoSrc && project.videoSrc.endsWith('.mp4') ? (
+          {loomEmbedUrl ? (
+            <iframe
+              src={`${loomEmbedUrl}&autoplay=1&muted=1`}
+              title={`${project.title} Video Background`}
+              frameBorder="0"
+              webkitallowfullscreen="true"
+              mozallowfullscreen="true"
+              allowFullScreen
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                width: '160%',
+                height: '160%',
+                transform: 'translate(-50%, -50%)',
+                pointerEvents: 'none',
+                opacity: 0.75,
+                border: 'none'
+              }}
+            />
+          ) : project.videoSrc && project.videoSrc.endsWith('.mp4') ? (
             <video 
               ref={videoRef}
               src={project.videoSrc}
@@ -895,56 +915,6 @@ export const ProjectDetailsPage = () => {
         {/* OVERVIEW TAB */}
         {activeTab === 'Overview' && (
           <div className="tab-section-wrap fade-in">
-            {loomEmbedUrl && (
-              <div id="video-walkthrough-section" style={{ marginBottom: '2.5rem' }}>
-                <div className="section-title-wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
-                  <div>
-                    <h2 className="section-title-text">Video Walkthrough</h2>
-                    <div className="section-title-line" style={{ backgroundColor: accentColor }}></div>
-                  </div>
-                  <a 
-                    href={project.liveDemo || project.videoSrc} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="btn-hero-secondary" 
-                    style={{ fontSize: '13px', padding: '0.45rem 1rem' }}
-                  >
-                    <ExternalLink size={14} />
-                    <span>Open in Loom ↗</span>
-                  </a>
-                </div>
-
-                <div style={{
-                  position: 'relative',
-                  paddingBottom: '56.25%',
-                  height: 0,
-                  overflow: 'hidden',
-                  borderRadius: '16px',
-                  border: `1px solid ${accentColor}44`,
-                  backgroundColor: '#040D17',
-                  boxShadow: `0 12px 40px rgba(0,0,0,0.5), 0 0 20px ${accentColor}1A`
-                }}>
-                  <iframe
-                    src={loomEmbedUrl}
-                    title={`${project.title} Video Walkthrough`}
-                    frameBorder="0"
-                    webkitallowfullscreen="true"
-                    mozallowfullscreen="true"
-                    allowFullScreen
-                    loading="lazy"
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      borderRadius: '16px'
-                    }}
-                  />
-                </div>
-              </div>
-            )}
-
             <div className="section-title-wrap">
               <h2 className="section-title-text">Overview</h2>
             </div>
