@@ -78,6 +78,15 @@ export const ProjectDetailsPage = () => {
   const [activeImageIndex, setActiveImageIndex] = useState(null);
   const [screenshotFilter, setScreenshotFilter] = useState('All');
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+
+  const getLoomEmbedUrl = (url) => {
+    if (!url) return null;
+    const match = url.match(/loom\.com\/(?:share|embed)\/([a-zA-Z0-9]+)/);
+    return match ? `https://www.loom.com/embed/${match[1]}?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true` : null;
+  };
+
+  const loomEmbedUrl = getLoomEmbedUrl(project.liveDemo || project.videoSrc);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -96,9 +105,10 @@ export const ProjectDetailsPage = () => {
   }, [isMuted]);
 
   const handleWatchDemo = () => {
-    const targetUrl = project.liveDemo || project.videoSrc;
-    if (targetUrl) {
-      window.open(targetUrl, '_blank');
+    if (loomEmbedUrl) {
+      setIsVideoModalOpen(true);
+    } else if (project.liveDemo || project.videoSrc) {
+      window.open(project.liveDemo || project.videoSrc, '_blank');
     }
   };
 
@@ -885,6 +895,56 @@ export const ProjectDetailsPage = () => {
         {/* OVERVIEW TAB */}
         {activeTab === 'Overview' && (
           <div className="tab-section-wrap fade-in">
+            {loomEmbedUrl && (
+              <div id="video-walkthrough-section" style={{ marginBottom: '2.5rem' }}>
+                <div className="section-title-wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+                  <div>
+                    <h2 className="section-title-text">Video Walkthrough</h2>
+                    <div className="section-title-line" style={{ backgroundColor: accentColor }}></div>
+                  </div>
+                  <a 
+                    href={project.liveDemo || project.videoSrc} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn-hero-secondary" 
+                    style={{ fontSize: '13px', padding: '0.45rem 1rem' }}
+                  >
+                    <ExternalLink size={14} />
+                    <span>Open in Loom ↗</span>
+                  </a>
+                </div>
+
+                <div style={{
+                  position: 'relative',
+                  paddingBottom: '56.25%',
+                  height: 0,
+                  overflow: 'hidden',
+                  borderRadius: '16px',
+                  border: `1px solid ${accentColor}44`,
+                  backgroundColor: '#040D17',
+                  boxShadow: `0 12px 40px rgba(0,0,0,0.5), 0 0 20px ${accentColor}1A`
+                }}>
+                  <iframe
+                    src={loomEmbedUrl}
+                    title={`${project.title} Video Walkthrough`}
+                    frameBorder="0"
+                    webkitallowfullscreen="true"
+                    mozallowfullscreen="true"
+                    allowFullScreen
+                    loading="lazy"
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: '16px'
+                    }}
+                  />
+                </div>
+              </div>
+            )}
+
             <div className="section-title-wrap">
               <h2 className="section-title-text">Overview</h2>
             </div>
@@ -1180,6 +1240,122 @@ export const ProjectDetailsPage = () => {
           </div>
         )}
       </main>
+
+      {/* LOOM VIDEO EMBED MODAL OVERLAY */}
+      {isVideoModalOpen && loomEmbedUrl && (
+        <div 
+          className="video-modal-backdrop fade-in"
+          onClick={() => setIsVideoModalOpen(false)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            backgroundColor: 'rgba(4, 13, 23, 0.88)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            zIndex: 9999,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '1.5rem'
+          }}
+        >
+          <div 
+            className="video-modal-content"
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: '1000px',
+              backgroundColor: '#07111B',
+              border: `1px solid ${accentColor}66`,
+              borderRadius: '20px',
+              boxShadow: `0 24px 60px rgba(0, 0, 0, 0.8), 0 0 30px ${accentColor}2E`,
+              overflow: 'hidden',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >
+            {/* Modal Header */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '1.1rem 1.6rem',
+              borderBottom: '1px solid #162B3D',
+              backgroundColor: '#050E17'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+                <Play size={18} color={accentColor} />
+                <span style={{ fontWeight: 700, fontSize: '17px', color: '#F5F7FA' }}>
+                  {project.title} — Video Walkthrough
+                </span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <a 
+                  href={project.liveDemo || project.videoSrc}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: accentColor,
+                    fontSize: '13px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.35rem'
+                  }}
+                >
+                  <ExternalLink size={14} />
+                  <span>Open in Loom ↗</span>
+                </a>
+                <button
+                  onClick={() => setIsVideoModalOpen(false)}
+                  style={{
+                    background: 'rgba(255,255,255,0.08)',
+                    border: 'none',
+                    borderRadius: '50%',
+                    width: 36,
+                    height: 36,
+                    color: '#FFF',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer',
+                    transition: 'background 0.2s ease'
+                  }}
+                >
+                  <X size={20} />
+                </button>
+              </div>
+            </div>
+
+            {/* Modal Video Body */}
+            <div style={{
+              position: 'relative',
+              paddingBottom: '56.25%',
+              height: 0,
+              width: '100%',
+              backgroundColor: '#000'
+            }}>
+              <iframe
+                src={loomEmbedUrl}
+                title={`${project.title} Video Walkthrough`}
+                frameBorder="0"
+                webkitallowfullscreen="true"
+                mozallowfullscreen="true"
+                allowFullScreen
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%'
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* 5. MINIMALIST FOOTER */}
       <footer className="details-footer">
