@@ -56,7 +56,7 @@ I'm currently looking for full-time Software Developer roles — feel free to re
       highlights: ["Event-Driven Architecture", "Keycloak OAuth2 PKCE Security", "Google Gemini AI Engine Integration", "Async RabbitMQ Queueing", "Polyglot Persistence (PostgreSQL & MongoDB)"],
       hoverTechStack: ["Java 17", "Spring Boot 3", "RabbitMQ", "Keycloak", "MongoDB"],
       techStack: ["Java 17", "Spring Boot 3", "Spring Cloud Gateway", "Eureka Server", "RabbitMQ", "Google Gemini API", "Keycloak OAuth2", "PostgreSQL", "MongoDB", "React 18", "Docker"],
-      videoSrc: "",
+      videoSrc: "/videos/Fitness_App_Final_Captions.mp4",
       githubUrl: "https://github.com/mahaksingh",
       liveDemo: "",
       overview: {
