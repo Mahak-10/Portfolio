@@ -283,9 +283,9 @@ I'm currently looking for full-time Software Developer roles — feel free to re
       techStack: ["Java 21", "Spring Boot 3.4.2", "Spring Security", "Spring Data JPA", "PostgreSQL", "Stripe SDK 29", "PayPal SDK", "React 19.2", "Redux Toolkit 2.11", "TailwindCSS 4", "SpringDoc OpenAPI"],
       thumbnail: "/images/shopverse-thumbnail.png",
       heroImage: "/images/shopverse-thumbnail.png",
-      videoSrc: "https://www.loom.com/share/64abb3c08a61479798acf308ef0ce4ab",
+      videoSrc: "https://www.loom.com/share/64f891ef85024a4bbce98c7cdfa60c38",
       githubUrl: "https://github.com/Mahak-10/ShopVerse-Ecommerce-Platform",
-      liveDemo: "https://www.loom.com/share/64abb3c08a61479798acf308ef0ce4ab",
+      liveDemo: "https://www.loom.com/share/64f891ef85024a4bbce98c7cdfa60c38",
       overview: {
         problemStatement: "Traditional e-commerce implementations struggle with data isolation leaks (cart/address data bleeding across user sessions), payment gateway rigidity (single point of failure), audit breakage (deleting an address crashing historical order records), and inventory race conditions (overselling due to non-atomic updates).",
         whatISolved: "ShopVerse solves these challenges with a clean, decoupled architecture: strict JWT-scoped resource ownership, dual Stripe & PayPal payment gateway redundancy with Cash on Delivery (COD), audit-safe soft-disassociation on delete, and role-tailored workflows for Customers, Sellers, and Admins.",
