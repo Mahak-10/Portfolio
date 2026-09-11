@@ -24,126 +24,32 @@ import './ProjectsPage.css';
 
 // Card 1 — AI Health Custom Technical Visual
 const AIHealthThumbnail = () => (
-  <svg viewBox="0 0 460 240" className="card-media-bg">
-    <defs>
-      <linearGradient id="aiHealthBg" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#040D17" />
-        <stop offset="100%" stopColor="#0B2338" />
-      </linearGradient>
-      <linearGradient id="cyanLine" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#25B9FF" stopOpacity="0.2" />
-        <stop offset="50%" stopColor="#25B9FF" stopOpacity="1" />
-        <stop offset="100%" stopColor="#00E676" stopOpacity="0.8" />
-      </linearGradient>
-    </defs>
-    
-    <rect width="460" height="240" fill="url(#aiHealthBg)" />
-    <path d="M 0 60 L 460 60 M 0 120 L 460 120 M 0 180 L 460 180" stroke="#12304A" strokeWidth="1" strokeDasharray="4 4" />
-    <path d="M 120 0 L 120 240 M 240 0 L 240 240 M 360 0 L 360 240" stroke="#12304A" strokeWidth="1" strokeDasharray="4 4" />
-    
-    <g transform="translate(24, 60)" opacity="0.85">
-      <text x="0" y="0" fill="#25B9FF" fontSize="12" fontFamily="JetBrains Mono" fontWeight="600" letterSpacing="1.5">HEALTHIER</text>
-      <text x="0" y="20" fill="#A9BCD3" fontSize="12" fontFamily="JetBrains Mono" fontWeight="600" letterSpacing="1.5">PEOPLE</text>
-      <text x="0" y="40" fill="#25B9FF" fontSize="12" fontFamily="JetBrains Mono" fontWeight="600" letterSpacing="1.5">BRIGHTER</text>
-      <text x="0" y="60" fill="#A9BCD3" fontSize="12" fontFamily="JetBrains Mono" fontWeight="600" letterSpacing="1.5">TOMORROWS</text>
-    </g>
-
-    <rect x="135" y="45" width="160" height="150" rx="12" fill="#071727" stroke="#1D4A6E" strokeWidth="1.5" />
-    <path d="M 30 140 L 140 140 L 155 110 L 170 170 L 185 80 L 200 150 L 215 130 L 230 140 L 430 140" 
-          stroke="url(#cyanLine)" strokeWidth="3" fill="none" strokeLinecap="round" />
-
-    <g transform="translate(195, 75)" fill="none" stroke="#25B9FF" strokeWidth="2">
-      <path d="M 10 10 Q 20 50 35 50 Q 50 50 60 10" />
-      <circle cx="35" cy="58" r="8" fill="#25B9FF" fillOpacity="0.2" />
-      <circle cx="35" cy="58" r="3" fill="#25B9FF" />
-    </g>
-    
-    <circle cx="295" cy="65" r="3" fill="#25B9FF" />
-    <circle cx="380" cy="90" r="3" fill="#25B9FF" />
-    <path d="M 295 65 L 340 65 L 380 90" stroke="#1D4A6E" strokeWidth="1" fill="none" />
-  </svg>
+  <img 
+    src="/images/fitsphere-thumbnail.png" 
+    alt="FitSphere — Health & Fitness AI" 
+    className="card-media-bg"
+    style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+  />
 );
 
 // Card 2 — Enterprise E-Commerce Custom Technical Visual
 const ECommerceThumbnail = () => (
-  <svg viewBox="0 0 460 240" className="card-media-bg">
-    <defs>
-      <linearGradient id="ecomBg" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#150E05" />
-        <stop offset="100%" stopColor="#2B1A0A" />
-      </linearGradient>
-    </defs>
-    
-    <rect width="460" height="240" fill="url(#ecomBg)" />
-    <path d="M 0 50 L 460 50 M 0 120 L 460 120 M 0 190 L 460 190" stroke="#3D2812" strokeWidth="1" strokeDasharray="4 4" />
-    
-    <g transform="translate(24, 60)" opacity="0.85">
-      <text x="0" y="0" fill="#FFB84A" fontSize="12" fontFamily="JetBrains Mono" fontWeight="600" letterSpacing="1.5">SHOP</text>
-      <text x="0" y="20" fill="#A9BCD3" fontSize="12" fontFamily="JetBrains Mono" fontWeight="600" letterSpacing="1.5">SELL</text>
-      <text x="0" y="40" fill="#FFB84A" fontSize="12" fontFamily="JetBrains Mono" fontWeight="600" letterSpacing="1.5">GROW</text>
-      <text x="0" y="60" fill="#A9BCD3" fontSize="12" fontFamily="JetBrains Mono" fontWeight="600" letterSpacing="1.5">TOGETHER</text>
-    </g>
-
-    <rect x="160" y="45" width="140" height="150" rx="12" fill="#1C1207" stroke="#543616" strokeWidth="1.5" />
-    
-    <g transform="translate(195, 85)" fill="none" stroke="#FFB84A" strokeWidth="2.2" strokeLinecap="round">
-      <path d="M 0 0 L 10 0 L 22 35 L 55 35 L 65 10 L 18 10" />
-      <circle cx="26" cy="46" r="4" fill="#FFB84A" />
-      <circle cx="50" cy="46" r="4" fill="#FFB84A" />
-      <line x1="30" y1="10" x2="26" y2="35" stroke="#FFB84A" strokeWidth="1" />
-      <line x1="42" y1="10" x2="40" y2="35" stroke="#FFB84A" strokeWidth="1" />
-      <line x1="54" y1="10" x2="52" y2="35" stroke="#FFB84A" strokeWidth="1" />
-    </g>
-
-    <rect x="135" y="130" width="30" height="28" rx="4" fill="#291A0C" stroke="#FFB84A" strokeWidth="1.2" />
-    <path d="M 135 138 L 165 138 M 150 130 L 150 158" stroke="#FFB84A" strokeWidth="1" />
-
-    <rect x="315" y="110" width="45" height="28" rx="4" fill="#291A0C" stroke="#FFB84A" strokeWidth="1.2" />
-    <line x1="315" y1="118" x2="360" y2="118" stroke="#FFB84A" strokeWidth="2" />
-    <rect x="320" y="125" width="10" height="7" rx="1" fill="#FFB84A" />
-  </svg>
+  <img 
+    src="/images/shopverse-thumbnail.png" 
+    alt="ShopVerse — Enterprise E-Commerce" 
+    className="card-media-bg"
+    style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+  />
 );
 
 // Card 3 — Expense Tracker Custom Technical Visual
 const ExpenseTrackerThumbnail = () => (
-  <svg viewBox="0 0 460 240" className="card-media-bg">
-    <defs>
-      <linearGradient id="expenseBg" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#041710" />
-        <stop offset="100%" stopColor="#0B3022" />
-      </linearGradient>
-    </defs>
-    
-    <rect width="460" height="240" fill="url(#expenseBg)" />
-    <path d="M 0 60 L 460 60 M 0 120 L 460 120 M 0 180 L 460 180" stroke="#0E3827" strokeWidth="1" strokeDasharray="4 4" />
-    
-    <g transform="translate(24, 60)" opacity="0.85">
-      <text x="0" y="0" fill="#2DDBA0" fontSize="12" fontFamily="JetBrains Mono" fontWeight="600" letterSpacing="1.5">TRACK</text>
-      <text x="0" y="20" fill="#A9BCD3" fontSize="12" fontFamily="JetBrains Mono" fontWeight="600" letterSpacing="1.5">PLAN</text>
-      <text x="0" y="40" fill="#2DDBA0" fontSize="12" fontFamily="JetBrains Mono" fontWeight="600" letterSpacing="1.5">SAVE</text>
-      <text x="0" y="60" fill="#A9BCD3" fontSize="12" fontFamily="JetBrains Mono" fontWeight="600" letterSpacing="1.5">GROW</text>
-    </g>
-
-    <rect x="165" y="45" width="145" height="150" rx="12" fill="#072116" stroke="#16543A" strokeWidth="1.5" />
-    
-    <g transform="translate(185, 90)">
-      <rect x="0" y="45" width="14" height="35" rx="2" fill="#2DDBA0" fillOpacity="0.4" />
-      <rect x="22" y="30" width="14" height="50" rx="2" fill="#2DDBA0" fillOpacity="0.6" />
-      <rect x="44" y="15" width="14" height="65" rx="2" fill="#2DDBA0" fillOpacity="0.8" />
-      <rect x="66" y="0" width="14" height="80" rx="2" fill="#2DDBA0" />
-      
-      <path d="M -5 40 L 20 25 L 45 12 L 78 -10" stroke="#00E676" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-      <polygon points="78,-16 84,-6 72,-6" fill="#00E676" />
-    </g>
-
-    <circle cx="125" cy="140" r="16" fill="none" stroke="#2DDBA0" strokeWidth="5" strokeDasharray="70 30" />
-
-    <g transform="translate(325, 125)">
-      <ellipse cx="14" cy="20" rx="14" ry="5" fill="#0B3022" stroke="#2DDBA0" strokeWidth="1.2" />
-      <ellipse cx="14" cy="14" rx="14" ry="5" fill="#0B3022" stroke="#2DDBA0" strokeWidth="1.2" />
-      <ellipse cx="14" cy="8" rx="14" ry="5" fill="#2DDBA0" fillOpacity="0.3" stroke="#2DDBA0" strokeWidth="1.2" />
-    </g>
-  </svg>
+  <img 
+    src="/images/expense-thumbnail.png" 
+    alt="ExpenseFlow — Smart Expense Tracker" 
+    className="card-media-bg"
+    style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+  />
 );
 
 export const ProjectsPage = () => {
@@ -394,7 +300,18 @@ export const ProjectsPage = () => {
                 <div className="project-card-media">
                   {getThumbnailComponent(proj.id)}
                   <div className="media-dark-overlay"></div>
-                  <div className="card-play-btn" title="Watch Demo">
+                  <div 
+                    className="card-play-btn" 
+                    title="Watch Demo"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (proj.videoSrc) {
+                        window.open(proj.videoSrc, '_blank');
+                      } else {
+                        navigate(`/projects/${proj.id}`);
+                      }
+                    }}
+                  >
                     <div className="play-icon-triangle"></div>
                   </div>
                   <span className="card-duration-badge">{proj.duration || "04:30"}</span>
@@ -446,7 +363,11 @@ export const ProjectsPage = () => {
                           className="btn-action-watch-demo"
                           onClick={(e) => {
                             e.stopPropagation();
-                            navigate(`/projects/${proj.id}`);
+                            if (proj.videoSrc) {
+                              window.open(proj.videoSrc, '_blank');
+                            } else {
+                              navigate(`/projects/${proj.id}`);
+                            }
                           }}
                         >
                           <Play size={13} fill="#07111B" />

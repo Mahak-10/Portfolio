@@ -177,26 +177,28 @@
   object-fit: cover;
 }
 
-/* DARK GRADIENT OVERLAYS */
+/* DARK GRADIENT OVERLAYS — LIGHTENED FOR CRISP VIDEO VISIBILITY */
 .hero-gradient-overlay-left {
   position: absolute;
   inset: 0;
   background: linear-gradient(to right, 
-    rgba(7, 17, 27, 0.96) 0%, 
-    rgba(7, 17, 27, 0.85) 35%, 
-    rgba(7, 17, 27, 0.45) 70%, 
-    rgba(7, 17, 27, 0.2) 100%);
+    rgba(7, 17, 27, 0.72) 0%, 
+    rgba(7, 17, 27, 0.40) 45%, 
+    rgba(7, 17, 27, 0.10) 80%, 
+    transparent 100%);
   z-index: 2;
+  pointer-events: none;
 }
 
 .hero-gradient-overlay-bottom {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, 
-    rgba(7, 17, 27, 0.95) 0%, 
-    rgba(7, 17, 27, 0.3) 40%, 
+    rgba(7, 17, 27, 0.85) 0%, 
+    rgba(7, 17, 27, 0.25) 30%, 
     transparent 100%);
   z-index: 2;
+  pointer-events: none;
 }
 
 /* HERO OVERLAY CONTENT */

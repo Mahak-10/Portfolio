@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { 
   ArrowLeft, 
@@ -69,12 +69,67 @@ export const ProjectDetailsPage = () => {
 
   const project = projects.find(p => p.id === projectId) || projects[0];
 
+  const videoRef = useRef(null);
   const [activeTab, setActiveTab] = useState('Overview');
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
   const [activeImageIndex, setActiveImageIndex] = useState(null);
   const [screenshotFilter, setScreenshotFilter] = useState('All');
   const [lightboxIndex, setLightboxIndex] = useState(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.play().catch(() => {});
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [isPlaying]);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = isMuted;
+    }
+  }, [isMuted]);
+
+  const handleWatchDemo = () => {
+    if (project.videoSrc) {
+      window.open(project.videoSrc, '_blank');
+    } else if (videoRef.current) {
+      setIsMuted(false);
+      setIsPlaying(true);
+      videoRef.current.currentTime = 0;
+      videoRef.current.play().catch(() => {});
+    }
+  };
+
+  const togglePlay = () => {
+    setIsPlaying(prev => !prev);
+  };
+
+  const toggleMute = () => {
+    setIsMuted(prev => !prev);
+  };
+
+  const toggleFullscreen = () => {
+    if (videoRef.current) {
+      if (videoRef.current.requestFullscreen) {
+        videoRef.current.requestFullscreen();
+      } else if (videoRef.current.webkitRequestFullscreen) {
+        videoRef.current.webkitRequestFullscreen();
+      }
+    }
+  };
+
+  const formatTime = (seconds) => {
+    if (isNaN(seconds) || seconds <= 0) return "0:00";
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+  };
 
   const accentColor = project.accent || '#35BDF5';
   const secondaryAccent = project.accentSecondary || project.accent || '#54E0C1';
@@ -662,12 +717,27 @@ export const ProjectDetailsPage = () => {
         <div className="hero-video-container">
           {project.videoSrc ? (
             <video 
+              ref={videoRef}
               src={project.videoSrc}
               className="hero-video-element"
               autoPlay
               loop
               muted={isMuted}
               playsInline
+              onTimeUpdate={() => {
+                if (videoRef.current) setCurrentTime(videoRef.current.currentTime);
+              }}
+              onLoadedMetadata={() => {
+                if (videoRef.current) setDuration(videoRef.current.duration);
+              }}
+              onClick={togglePlay}
+            />
+          ) : project.heroImage || project.thumbnail ? (
+            <img
+              src={project.heroImage || project.thumbnail}
+              alt={project.title}
+              className="hero-video-element"
+              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
             />
           ) : (
             /* Cinematic Blueprint Dark Media Backdrop when video file is pending */
@@ -745,7 +815,7 @@ export const ProjectDetailsPage = () => {
 
               {/* Action Buttons */}
               <div className="hero-buttons-row">
-                <button className="btn-hero-primary" onClick={() => setIsPlaying(!isPlaying)}>
+                <button className="btn-hero-primary" onClick={handleWatchDemo}>
                   <Play size={15} fill="#07111B" />
                   <span>Watch Demo</span>
                 </button>
@@ -780,16 +850,18 @@ export const ProjectDetailsPage = () => {
           {/* Bottom Bar: Video Controls Bar */}
           <div className="hero-bottom-controls">
             <div className="controls-left">
-              <button className="control-btn" onClick={() => setIsPlaying(!isPlaying)}>
+              <button className="control-btn" onClick={togglePlay} title={isPlaying ? "Pause" : "Play"}>
                 {isPlaying ? <Pause size={18} /> : <Play size={18} />}
               </button>
-              <button className="control-btn" onClick={() => setIsMuted(!isMuted)}>
+              <button className="control-btn" onClick={toggleMute} title={isMuted ? "Unmute sound" : "Mute sound"}>
                 {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
               </button>
-              <span className="time-display">0:00 / {project.duration || "02:36"}</span>
+              <span className="time-display">
+                {formatTime(currentTime)} / {duration ? formatTime(duration) : (project.duration || "02:36")}
+              </span>
             </div>
             <div className="controls-right">
-              <button className="control-btn" title="Fullscreen">
+              <button className="control-btn" onClick={toggleFullscreen} title="Fullscreen">
                 <Maximize2 size={16} />
               </button>
             </div>
@@ -800,7 +872,7 @@ export const ProjectDetailsPage = () => {
       {/* 3. HORIZONTAL TAB NAVIGATION */}
       <nav className="details-tabs-bar">
         <div className="tabs-container">
-          {['Overview', 'Features', 'How It Works', 'Tech Stack', 'Screenshots'].map((tab) => (
+          {['Overview', 'Features', 'How It Works', 'Tech Stack'].map((tab) => (
             <button 
               key={tab}
               className={`tab-button ${activeTab === tab ? 'active' : ''}`}
@@ -1109,130 +1181,6 @@ export const ProjectDetailsPage = () => {
                 </p>
               </div>
             </div>
-          </div>
-        )}
-
-        {/* SCREENSHOTS TAB */}
-        {activeTab === 'Screenshots' && (
-          <div className="tab-section-wrap fade-in">
-            {/* Header: Left Title & Underline | Right Description */}
-            <div className="ss-header-row">
-              <div className="ss-header-left">
-                <h2 className="ss-heading-title">Screenshots</h2>
-                <div className="ss-heading-line" style={{ backgroundColor: accentColor }}></div>
-              </div>
-              <p className="ss-header-desc">
-                A glimpse of the application interface and key features.
-              </p>
-            </div>
-
-            {/* Filter Category Bar */}
-            <div className="ss-filter-bar">
-              {['All', 'User', 'Admin', 'Analytics', 'Mobile'].map((cat) => {
-                const isActive = screenshotFilter === cat;
-                return (
-                  <button
-                    key={cat}
-                    onClick={() => setScreenshotFilter(cat)}
-                    className={`ss-filter-btn ${isActive ? 'active' : ''}`}
-                    style={
-                      isActive
-                        ? { backgroundColor: accentColor, borderColor: accentColor, color: '#FFFFFF' }
-                        : {}
-                    }
-                  >
-                    {cat}
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* 3-Column Screenshot Grid */}
-            <div className="ss-grid">
-              {filteredScreenshots.map((item, idx) => (
-                <div
-                  key={item.id}
-                  className="ss-card"
-                  onClick={() => setLightboxIndex(idx)}
-                >
-                  <div className="ss-card-image-wrap">
-                    <RenderScreenshotThumbnail item={item} project={project} />
-                  </div>
-
-                  <div className="ss-card-body">
-                    <h3 className="ss-card-title">
-                      {item.num ? `${item.num}. ${item.title}` : item.title}
-                    </h3>
-                    <p className="ss-card-desc">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* LIGHTBOX MODAL */}
-            {lightboxIndex !== null && filteredScreenshots[lightboxIndex] && (
-              <div
-                className="ss-lightbox-backdrop fade-in"
-                onClick={() => setLightboxIndex(null)}
-              >
-                <div
-                  className="ss-lightbox-content"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  {/* Close button */}
-                  <button
-                    className="ss-lightbox-close"
-                    onClick={() => setLightboxIndex(null)}
-                  >
-                    <X size={24} color="#FFFFFF" />
-                  </button>
-
-                  {/* Previous arrow */}
-                  <button
-                    className="ss-lightbox-nav prev"
-                    onClick={() =>
-                      setLightboxIndex((prev) =>
-                        prev > 0 ? prev - 1 : filteredScreenshots.length - 1
-                      )
-                    }
-                  >
-                    <ChevronLeft size={30} color="#FFFFFF" />
-                  </button>
-
-                  {/* Next arrow */}
-                  <button
-                    className="ss-lightbox-nav next"
-                    onClick={() =>
-                      setLightboxIndex((prev) =>
-                        prev < filteredScreenshots.length - 1 ? prev + 1 : 0
-                      )
-                    }
-                  >
-                    <ChevronRight size={30} color="#FFFFFF" />
-                  </button>
-
-                  {/* Modal image preview */}
-                  <div className="ss-lightbox-img-wrap">
-                    <RenderScreenshotThumbnail
-                      item={filteredScreenshots[lightboxIndex]}
-                      project={project}
-                    />
-                  </div>
-
-                  {/* Modal info footer */}
-                  <div className="ss-lightbox-footer">
-                    <h3 className="ss-lightbox-title">
-                      {filteredScreenshots[lightboxIndex].num
-                        ? `${filteredScreenshots[lightboxIndex].num}. ${filteredScreenshots[lightboxIndex].title}`
-                        : filteredScreenshots[lightboxIndex].title}
-                    </h3>
-                    <p className="ss-lightbox-desc">
-                      {filteredScreenshots[lightboxIndex].description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
           </div>
         )}
       </main>
