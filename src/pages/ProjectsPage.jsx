@@ -147,7 +147,14 @@ export const ProjectsPage = () => {
 
           {/* ACTION BUTTONS */}
           <div className="detail-actions-row">
-            <button className="btn-detail-primary" style={{ backgroundColor: activeProject.accent }}>
+            <button 
+              className="btn-detail-primary" 
+              style={{ backgroundColor: activeProject.accent }}
+              onClick={() => {
+                const targetUrl = activeProject.liveDemo || activeProject.videoSrc;
+                if (targetUrl) window.open(targetUrl, '_blank');
+              }}
+            >
               <Play size={18} fill="#07111B" />
               <span>Watch Demo</span>
             </button>
@@ -305,8 +312,9 @@ export const ProjectsPage = () => {
                     title="Watch Demo"
                     onClick={(e) => {
                       e.stopPropagation();
-                      if (proj.videoSrc) {
-                        window.open(proj.videoSrc, '_blank');
+                      const targetUrl = proj.liveDemo || proj.videoSrc;
+                      if (targetUrl) {
+                        window.open(targetUrl, '_blank');
                       } else {
                         navigate(`/projects/${proj.id}`);
                       }
@@ -363,8 +371,9 @@ export const ProjectsPage = () => {
                           className="btn-action-watch-demo"
                           onClick={(e) => {
                             e.stopPropagation();
-                            if (proj.videoSrc) {
-                              window.open(proj.videoSrc, '_blank');
+                            const targetUrl = proj.liveDemo || proj.videoSrc;
+                            if (targetUrl) {
+                              window.open(targetUrl, '_blank');
                             } else {
                               navigate(`/projects/${proj.id}`);
                             }

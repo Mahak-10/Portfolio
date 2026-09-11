@@ -58,7 +58,7 @@ I'm currently looking for full-time Software Developer roles — feel free to re
       techStack: ["Java 17", "Spring Boot 3", "Spring Cloud Gateway", "Eureka Server", "RabbitMQ", "Google Gemini API", "Keycloak OAuth2", "PostgreSQL", "MongoDB", "React 18", "Docker"],
       thumbnail: "/images/fitsphere-thumbnail.png",
       heroImage: "/images/fitsphere-thumbnail.png",
-      videoSrc: "/videos/fitsphere.mp4",
+      videoSrc: "https://www.loom.com/share/852cb70c9ff04d39b48e2ae6e6fc473b",
       githubUrl: "https://github.com/Mahak-10/FitSphere-Health-Recommendation-System",
       liveDemo: "https://www.loom.com/share/852cb70c9ff04d39b48e2ae6e6fc473b",
       overview: {
@@ -283,7 +283,7 @@ I'm currently looking for full-time Software Developer roles — feel free to re
       techStack: ["Java 21", "Spring Boot 3.4.2", "Spring Security", "Spring Data JPA", "PostgreSQL", "Stripe SDK 29", "PayPal SDK", "React 19.2", "Redux Toolkit 2.11", "TailwindCSS 4", "SpringDoc OpenAPI"],
       thumbnail: "/images/shopverse-thumbnail.png",
       heroImage: "/images/shopverse-thumbnail.png",
-      videoSrc: "/videos/shopverse.mp4",
+      videoSrc: "https://www.loom.com/share/64abb3c08a61479798acf308ef0ce4ab",
       githubUrl: "https://github.com/Mahak-10/ShopVerse-Ecommerce-Platform",
       liveDemo: "https://www.loom.com/share/64abb3c08a61479798acf308ef0ce4ab",
       overview: {
@@ -554,7 +554,7 @@ I'm currently looking for full-time Software Developer roles — feel free to re
       techStack: ["Java 17", "Spring Boot 3", "Spring Data JPA", "PostgreSQL", "React 19", "Vite", "Recharts", "TailwindCSS", "Axios", "ModelMapper"],
       thumbnail: "/images/expense-thumbnail.png",
       heroImage: "/images/expense-thumbnail.png",
-      videoSrc: "/videos/expense-tracker.mp4",
+      videoSrc: "https://www.loom.com/share/1f5048e16d5e4256a9597c0899f766cd",
       githubUrl: "https://github.com/Mahak-10/Expense-Tracker",
       liveDemo: "https://www.loom.com/share/1f5048e16d5e4256a9597c0899f766cd",
       overview: {

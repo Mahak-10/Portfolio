@@ -96,13 +96,9 @@ export const ProjectDetailsPage = () => {
   }, [isMuted]);
 
   const handleWatchDemo = () => {
-    if (project.videoSrc) {
-      window.open(project.videoSrc, '_blank');
-    } else if (videoRef.current) {
-      setIsMuted(false);
-      setIsPlaying(true);
-      videoRef.current.currentTime = 0;
-      videoRef.current.play().catch(() => {});
+    const targetUrl = project.liveDemo || project.videoSrc;
+    if (targetUrl) {
+      window.open(targetUrl, '_blank');
     }
   };
 
@@ -715,7 +711,7 @@ export const ProjectDetailsPage = () => {
       {/* 2. CINEMATIC VIDEO HERO SECTION (~520px) */}
       <section className="details-hero-section">
         <div className="hero-video-container">
-          {project.videoSrc ? (
+          {project.videoSrc && project.videoSrc.endsWith('.mp4') ? (
             <video 
               ref={videoRef}
               src={project.videoSrc}
