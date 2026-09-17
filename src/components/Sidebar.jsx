@@ -75,7 +75,7 @@ export const Sidebar = () => {
                   className={`sidebar-nav-item ${isActive ? 'active' : ''}`}
                   onClick={() => {
                     if (item.path === '/resume') {
-                      window.open('/resume_mahak.pdf', '_blank');
+                      window.open('/MAHAK_SINGH_RESUME.pdf', '_blank');
                     } else {
                       navigate(item.path);
                     }
@@ -86,7 +86,7 @@ export const Sidebar = () => {
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       if (item.path === '/resume') {
-                        window.open('/resume_mahak.pdf', '_blank');
+                        window.open('/MAHAK_SINGH_RESUME.pdf', '_blank');
                       } else {
                         navigate(item.path);
                       }

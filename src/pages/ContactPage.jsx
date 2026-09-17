@@ -148,7 +148,7 @@ export const ContactPage = () => {
                   </div>
                   <span className="row-label">Resume</span>
                   <span className="row-colon">:</span>
-                  <a href="/resume_mahak.pdf" target="_blank" rel="noopener noreferrer" className="row-link">
+                  <a href="/MAHAK_SINGH_RESUME.pdf" target="_blank" rel="noopener noreferrer" className="row-link">
                     View Resume <ExternalLink size={13} style={{ marginLeft: 2 }} />
                   </a>
                 </div>

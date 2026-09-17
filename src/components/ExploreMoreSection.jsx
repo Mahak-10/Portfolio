@@ -30,7 +30,7 @@ export const ExploreMoreSection = ({ sectionRef }) => {
 
   const handleCardClick = (path) => {
     if (path === '/resume') {
-      window.open('/resume_mahak.pdf', '_blank');
+      window.open('/MAHAK_SINGH_RESUME.pdf', '_blank');
     } else {
       navigate(path);
       window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -838,8 +838,8 @@ I'm currently looking for full-time Software Developer roles — feel free to re
   ],
 
   resume: {
-    downloadLink: "#",
-    filename: "Mahak_Singh_Resume.pdf"
+    downloadLink: "/MAHAK_SINGH_RESUME.pdf",
+    filename: "MAHAK_SINGH_RESUME.pdf"
   },
 
   contact: {

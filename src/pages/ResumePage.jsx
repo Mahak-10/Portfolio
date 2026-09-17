@@ -8,8 +8,8 @@ export const ResumePage = () => {
   const navigate = useNavigate();
   const { personalInfo } = portfolioData;
 
-  const pdfPath = "/resume_mahak.pdf";
-  const downloadFileName = "Mahak_Singh_Resume.pdf";
+  const pdfPath = portfolioData.resume.downloadLink || "/MAHAK_SINGH_RESUME.pdf";
+  const downloadFileName = portfolioData.resume.filename || "MAHAK_SINGH_RESUME.pdf";
 
   return (
     <div className="resume-root fade-in">
